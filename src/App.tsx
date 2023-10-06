@@ -1,8 +1,9 @@
 import { marked } from "marked";
 import { useEffect, useState } from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 export default function App() {
-  const [markdown, setMarkdown] = useState("");
+  const [markdown, setMarkdown] = useLocalStorage<string>("markdown", "");
   const [active, setActive] = useState("markdown");
   const [preview, setPrivew] = useState("");
 
